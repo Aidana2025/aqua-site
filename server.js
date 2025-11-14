@@ -25,7 +25,7 @@ app.get("/webhook", (req,res)=>{
   console.log("VERIFY:", verify);
   console.log("CHALLENGE:", challenge);
   
-  if(mode && verify === "banya123") {
+  if(mode === "subscribe" && verify === "banya123") {
     return res.status(200).send(challenge);
   }
   res.sendStatus(403);
