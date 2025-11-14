@@ -21,7 +21,9 @@ app.get("/webhook", (req,res)=>{
   const mode = req.query["hub.mode"];
   const challenge = req.query["hub.challenge"];
   const verify = req.query["hub.verify_token"];
-  if(mode && verify === "banya123") return res.status(200).send(challenge);
+  if(mode && verify === "banya123") {
+    return res.status(200).send(challenge);
+  }
   res.sendStatus(403);
 });
 
